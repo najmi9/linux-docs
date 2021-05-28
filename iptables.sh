@@ -4,20 +4,20 @@
 
 iptables -F
 
-#Politics
+#Block all The connections
 iptables -P OUTPUT DROP
 iptables -P INPUT DROP
 iptables -P FORWARD DROP
 
-#Connexion établie
+#Let estabish connections allowed
 iptables -A INPUT -m state --state ESTABLISHED, RELATED -j ACCEPT
 iptables -A OUTPUT -m state --state ESTABLISHED, RELATED -j ACCEPT
 
-#Autoriser le loopback
+#allow internal connections inside the netwrok (loopback)
 iptables -A INPUT -i lo -j ACCEPT
 iables -A OUTPUT -o lo -j ACCEPT
 
-#SSH
+#Allow SSH Connections
 iptables -A INPUT -p tcp --dport 5789 -j ACCEPT
 
 #HTTP

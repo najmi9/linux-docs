@@ -4,7 +4,7 @@
 ```md
 #! /bin/bash
 ```
-2. Remove your script to `/etc/init.d` folder
+2. Move your script to `/etc/init.d` folder
 3. Make your file executable, by running this commend :
 ```bash
 sudo chmod +x myscript
